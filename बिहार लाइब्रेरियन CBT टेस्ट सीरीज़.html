@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>बिहार लाइब्रेरियन टेस्ट सीरीज़ – CBT अभ्यास</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--tx:#1d1b2e;--mut:#615f75;--pri:#3b3fbf;--pt:#fff;--acc:#e8830c;--ok:#15803d;--bad:#b91c1c;--mk:#7e22ce;--ln:#e2e0d8;--soft:#eceafd;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12121c;--card:#1c1c2b;--tx:#ecebf5;--mut:#a3a2b8;--pri:#8b8fff;--pt:#12121c;--acc:#f59e2b;--ok:#4ade80;--bad:#f87171;--mk:#c084fc;--ln:#2f2f45;--soft:#25254a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12121c;--card:#1c1c2b;--tx:#ecebf5;--mut:#a3a2b8;--pri:#8b8fff;--pt:#12121c;--acc:#f59e2b;--ok:#4ade80;--bad:#f87171;--mk:#c084fc;--ln:#2f2f45;--soft:#25254a;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font-family:"Noto Sans Devanagari","Nirmala UI","Mangal",system-ui,sans-serif;line-height:1.65;min-height:100%}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--ln);display:flex;align-items:center;gap:12px;padding:10px 16px;flex-wrap:wrap}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:10}
+.logo{font-weight:700;font-size:1.05rem;color:var(--pri);display:flex;gap:8px;align-items:center;margin-right:auto}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav button,.btn{font:inherit;border:1px solid var(--ln);background:var(--card);color:var(--tx);padding:8px 14px;border-radius:10px;cursor:pointer}
+nav button:hover,.btn:hover{border-color:var(--pri)}
+.btn.p{background:var(--pri);color:var(--pt);border-color:var(--pri);font-weight:600}
+.btn.o{background:var(--acc);color:#1d1b2e;border-color:var(--acc);font-weight:700}
+.btn.g{background:var(--ok);color:var(--pt);border-color:var(--ok);font-weight:600}
+main{max-width:1060px;margin:0 auto;padding:18px 16px 40px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:16px;padding:18px}
+.hero{background:linear-gradient(135deg,#2c2f9e,#5a3fc0);color:#fff;border-radius:20px;padding:34px 24px;text-align:center}
+.hero h1{margin:6px 0;font-size:clamp(1.5rem,5vw,2.4rem);line-height:1.3}
+.hero p{margin:6px auto 18px;max-width:560px;opacity:.92}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:16px 0}
+.stat{text-align:center}.stat b{display:block;font-size:1.7rem;color:var(--pri)}.stat span{color:var(--mut);font-size:.9rem}
+h2{font-size:1.25rem;margin:22px 0 10px}
+ul.l{padding-left:20px;margin:6px 0}ul.l li{margin:4px 0}
+.hist{width:100%;border-collapse:collapse;font-size:.92rem}
+.hist td,.hist th,.tbl td,.tbl th{padding:8px;border-bottom:1px solid var(--ln);text-align:left}
+input.nm{font:inherit;padding:10px 12px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--tx);width:100%;max-width:340px}
+.hide{display:none!important}
+/* test */
+.tbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:12px}
+.timer{font-weight:700;font-size:1.2rem;background:var(--soft);color:var(--pri);padding:6px 14px;border-radius:10px;font-variant-numeric:tabular-nums}
+.timer.low{background:var(--bad);color:#fff}
+.tw{display:grid;grid-template-columns:1fr 290px;gap:14px;align-items:start}
+@media(max-width:820px){.tw{grid-template-columns:1fr}}
+.qn{color:var(--mut);font-size:.9rem;display:flex;justify-content:space-between}
+.qt{font-size:1.15rem;font-weight:600;margin:8px 0 14px}
+.op{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--ln);border-radius:12px;padding:11px 12px;margin:8px 0;cursor:pointer;background:var(--card)}
+.op:hover{border-color:var(--pri)}
+.op.sel{border-color:var(--pri);background:var(--soft)}
+.op i{font-style:normal;font-weight:700;min-width:28px;height:28px;border-radius:50%;border:1.5px solid var(--ln);display:grid;place-items:center;font-size:.85rem;flex:none}
+.op.sel i{background:var(--pri);color:var(--pt);border-color:var(--pri)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.pal{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.pal button{font:inherit;font-weight:600;aspect-ratio:1;border-radius:9px;border:1.5px solid var(--ln);background:var(--card);color:var(--tx);cursor:pointer;position:relative;padding:0}
+.pal .s1{background:var(--bad);color:#fff;border-color:var(--bad)}
+.pal .s2{background:var(--ok);color:var(--pt);border-color:var(--ok)}
+.pal .s3{background:var(--mk);color:#fff;border-color:var(--mk);border-radius:50%}
+.pal .s4{background:var(--mk);color:#fff;border-color:var(--mk);border-radius:50%;box-shadow:inset 0 0 0 3px var(--ok)}
+.pal .cur{outline:3px solid var(--acc);outline-offset:1px}
+.lg{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.8rem;color:var(--mut);margin-top:12px}
+.lg span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px;background:var(--c);border:1px solid var(--ln)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:grid;place-items:center;z-index:20;padding:16px}
+.modal .card{max-width:420px;width:100%}
+/* result */
+.sc{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.big{font-size:2.8rem;font-weight:700;color:var(--pri);line-height:1.1}
+.tag{display:inline-block;padding:3px 12px;border-radius:99px;background:var(--soft);color:var(--pri);font-weight:600}
+.bar{height:10px;border-radius:99px;background:var(--ln);overflow:hidden;min-width:90px}
+.bar b{display:block;height:100%;background:var(--ok)}
+.tbl{width:100%;border-collapse:collapse;font-size:.92rem}
+.scroll{overflow-x:auto}
+.rv{border:1px solid var(--ln);border-radius:14px;padding:14px;margin:10px 0;background:var(--card)}
+.rv .op{cursor:default}.rv .op.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
+.rv .op.bd{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 14%,transparent)}
+.b{font-size:.8rem;padding:2px 10px;border-radius:99px;color:#fff}
+.b.ok{background:var(--ok);color:var(--pt)}.b.bd{background:var(--bad)}.b.sk{background:var(--mut)}
+.fl{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.fl .btn.on{background:var(--pri);color:var(--pt);border-color:var(--pri)}
+footer{text-align:center;color:var(--mut);padding:20px 16px calc(24px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--ln);font-size:.92rem}
+footer b{color:var(--tx)}
+@media print{header,footer,.noprint{display:none!important}body{background:#fff}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">📚 बिहार लाइब्रेरियन टेस्ट सीरीज़</div>
+  <nav class="noprint">
+    <button onclick="go('home')">होम</button>
+    <button onclick="go('instr')">निर्देश</button>
+    <button onclick="toggleTheme()" title="थीम बदलें">🌓</button>
+  </nav>
+</header>
+
+<main>
+<!-- होम -->
+<section id="home">
+  <div class="hero">
+    <div>🎯 परीक्षा तिथि: 22 नवंबर 2026</div>
+    <h1>चलिए अभ्यास करें:<br>बिहार लाइब्रेरियन टेस्ट</h1>
+    <p>वास्तविक CBT परीक्षा जैसा अनुभव – टाइमर, प्रश्न-पैलेट, मार्क फ़ॉर रिव्यू और टेस्ट के बाद विस्तृत परिणाम विश्लेषण।</p>
+    <button class="btn o" onclick="go('instr')">टेस्ट शुरू करें ▶</button>
+  </div>
+  <div class="grid">
+    <div class="card stat"><b>60</b><span>कुल प्रश्न</span></div>
+    <div class="card stat"><b>60 मिनट</b><span>समय सीमा</span></div>
+    <div class="card stat"><b>60</b><span>पूर्णांक</span></div>
+    <div class="card stat"><b>−0.25</b><span>गलत उत्तर पर</span></div>
+  </div>
+  <h2>उपलब्ध टेस्ट</h2>
+  <div class="card" style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+    <div><b>बिहार लाइब्रेरियन – पेपर 01</b><br><span style="color:var(--mut)">मोस्ट इम्पोर्टेंट प्रश्न • पुस्तकालय विज्ञान, बिहार GK, इतिहास, संविधान, विज्ञान</span></div>
+    <button class="btn p" onclick="go('instr')">अभ्यास करें</button>
+  </div>
+  <h2>विश्लेषण में क्या मिलेगा?</h2>
+  <div class="card"><ul class="l">
+    <li>स्कोर, प्रतिशत, सटीकता (Accuracy) और प्रदर्शन स्तर</li>
+    <li>सही / गलत / छोड़े गए प्रश्नों का चार्ट</li>
+    <li>विषय-वार विश्लेषण – मज़बूत और कमज़ोर क्षेत्र</li>
+    <li>समय विश्लेषण – प्रति प्रश्न औसत समय और सबसे अधिक समय लेने वाले प्रश्न</li>
+    <li>प्रश्न-वार समीक्षा – आपका उत्तर बनाम सही उत्तर</li>
+  </ul></div>
+  <h2>पिछले प्रयास</h2>
+  <div class="card scroll" id="hist"></div>
+</section>
+
+<!-- निर्देश -->
+<section id="instr" class="hide">
+  <div class="card">
+    <h2 style="margin-top:0">सामान्य निर्देश</h2>
+    <ul class="l">
+      <li>इस टेस्ट में कुल <b>60 प्रश्न</b> हैं और समय <b>60 मिनट</b> है।</li>
+      <li>प्रत्येक सही उत्तर के लिए <b>+1 अंक</b>, गलत उत्तर के लिए <b>−0.25 अंक</b>; बिना उत्तर वाले प्रश्न पर कोई अंक नहीं कटेगा।</li>
+      <li>स्क्रीन के दाईं ओर प्रश्न-पैलेट से किसी भी प्रश्न पर सीधे जा सकते हैं।</li>
+      <li>कठिन प्रश्न को <b>“रिव्यू के लिए चिह्नित”</b> करें; उत्तर दिया हुआ चिह्नित प्रश्न भी गिना जाएगा।</li>
+      <li>समय समाप्त होते ही टेस्ट अपने-आप जमा हो जाएगा।</li>
+    </ul>
+    <div class="lg" style="font-size:.9rem;margin:10px 0 16px">
+      <span style="--c:var(--card)">अनदेखा</span><span style="--c:var(--bad)">उत्तर नहीं दिया</span><span style="--c:var(--ok)">उत्तर दिया</span><span style="--c:var(--mk)">रिव्यू हेतु चिह्नित</span>
+    </div>
+    <label for="nm"><b>परीक्षार्थी का नाम</b></label><br>
+    <input id="nm" class="nm" placeholder="अपना नाम लिखें" maxlength="40"><br><br>
+    <button class="btn o" onclick="startTest()">मैं तैयार हूँ – टेस्ट शुरू करें ▶</button>
+  </div>
+</section>
+
+<!-- टेस्ट -->
+<section id="test" class="hide">
+  <div class="tbar">
+    <div><b>बिहार लाइब्रेरियन – पेपर 01</b> <span id="who" style="color:var(--mut)"></span></div>
+    <div class="timer" id="tm">60:00</div>
+  </div>
+  <div class="tw">
+    <div class="card">
+      <div class="qn"><span id="qno"></span><span id="qst"></span></div>
+      <div class="qt" id="qtx"></div>
+      <div id="ops"></div>
+      <div class="acts">
+        <button class="btn" onclick="nav(-1)">◀ पिछला</button>
+        <button class="btn" onclick="clr()">उत्तर हटाएँ</button>
+        <button class="btn" style="border-color:var(--mk);color:var(--mk)" onclick="markNext()">रिव्यू हेतु चिह्नित करें ▶</button>
+        <button class="btn p" onclick="nav(1)">सेव करें और अगला ▶</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="pal" id="pal"></div>
+      <div class="lg">
+        <span style="--c:var(--card)">अनदेखा</span><span style="--c:var(--bad)">उत्तर नहीं</span><span style="--c:var(--ok)">उत्तर दिया</span><span style="--c:var(--mk)">चिह्नित</span>
+      </div>
+      <div id="cnt" style="margin:12px 0;color:var(--mut);font-size:.9rem"></div>
+      <button class="btn g" style="width:100%" onclick="askSubmit()">टेस्ट जमा करें ✔</button>
+    </div>
+  </div>
+</section>
+
+<!-- परिणाम -->
+<section id="result" class="hide"></section>
+</main>
+
+<div id="modal" class="modal hide"><div class="card">
+  <h2 style="margin-top:0">क्या आप टेस्ट जमा करना चाहते हैं?</h2>
+  <div id="msum" style="margin-bottom:14px"></div>
+  <div class="acts"><button class="btn" onclick="closeM()">वापस जाएँ</button><button class="btn g" onclick="finish()">हाँ, जमा करें</button></div>
+</div></div>
+
+<footer>Developed by <b>Lumivox Studios ®</b> Sufiyan Absar 2026</footer>
+
+<script>
+const D=`ग्रंथमिति में किसी विषय पर प्रकाशित होने वाली मुख्य शोध पत्रिकाओं की पहचान के लिए कौन-सा गणितीय नियम प्रयुक्त होता है?|लोटका का नियम|जिपफ का नियम|रंगनाथन का नियम|ब्रैडफोर्ड का नियम
+दिसंबर 1916 के लखनऊ कांग्रेस अधिवेशन में चंपारण के किसानों की दयनीय स्थिति पर गांधीजी का ध्यान आकर्षित करने वाले प्रमुख व्यक्ति कौन थे?|स्वामी सहजानंद सरस्वती|राजकुमार शुक्ल|जयप्रकाश नारायण|डॉ. श्रीकृष्ण सिंह
+डेवी दशमलव वर्गीकरण के 23वें संस्करण में मुख्य वर्ग 600 किस ज्ञान क्षेत्र से संबंधित है?|प्रौद्योगिकी|शुद्ध विज्ञान|ललित कलाएं|भाषा
+भारतीय संविधान का कौन-सा अनुच्छेद नागरिकों के लिए एक समान नागरिक संहिता का निर्देश देता है?|अनुच्छेद 40|अनुच्छेद 42|अनुच्छेद 44|अनुच्छेद 48
+डॉ. रंगनाथन के कोलन वर्गीकरण में मुख्य वर्ग इतिहास को किस रोमन बड़े अक्षर से दर्शाया जाता है?|U|W|X|V
+मोटर वाहनों में पीछे से आने वाले वाहनों को देखने के लिए साइड मिरर के रूप में किस दर्पण का उपयोग होता है?|अवतल दर्पण|उत्तल दर्पण|समतल दर्पण|द्वि-अवतल दर्पण
+मार्क 21 ग्रंथसूची प्रारूप में पुस्तक का भौतिक विवरण दर्ज करने के लिए कौन-सा टैग निर्धारित है?|टैग 300|टैग 245|टैग 250|टैग 260
+भौगोलिक दृष्टि से बिहार राज्य में सर्वाधिक औसत वार्षिक वर्षा प्राप्त करने वाला जिला कौन-सा है?|पूर्णिया|अररिया|किशनगंज|कटिहार
+संदर्भ सेवा में पाठक की सूचना आवश्यकता के चार क्रमिक स्तर किस सूचना वैज्ञानिक ने प्रतिपादित किए थे?|मेलविल डेवी|जेम्स वायर|डॉ. एस. आर. रंगनाथन|रॉबर्ट एस. टेलर
+वर्ष 1919 में जलियांवाला बाग हत्याकांड के विरोध में किस भारतीय विद्वान ने ब्रिटिश सरकार द्वारा दी गई नाइटहुड की उपाधि लौटा दी थी?|महात्मा गांधी|रवींद्रनाथ टैगोर|गोपाल कृष्ण गोखले|मदन मोहन मालवीय
+पुस्तक चयन के क्षेत्र में मांग एवं आपूर्ति का सिद्धांत किस पुस्तकालयाध्यक्ष ने दिया था?|एल. आर. मैकक्कॉल्विन|मेलविल डेवी|सी. ए. कटर|एफ. के. डब्ल्यू. ड्रूरी
+समष्टि अर्थशास्त्र में जब मुद्रास्फीति और बेरोजगारी दोनों एक साथ उच्च स्तर पर पहुंच जाएं, तो उस स्थिति को क्या कहते हैं?|मंदी|अपस्फीति|स्टैगफ्लेशन|संकुचन
+सार्वभौमिक दशमलव वर्गीकरण में समय के सामान्य सहायक को किस प्रतीक द्वारा दर्शाया जाता है?|बराबर का चिह्न|धन चिह्न|कोलन|दोहरे उद्धरण
+बिहार सरकार द्वारा आधिकारिक रूप से घोषित राज्य का राजकीय पक्षी कौन-सा है?|कोयल|गौरैया|नीलकंठ|तोता
+अंतर्राष्ट्रीय मानक के अनुसार एक पारंपरिक पुस्तकालय कैटलॉग कार्ड का मानक आकार कितना होता है?|12.5 सेमी × 7.5 सेमी|10 सेमी × 5 सेमी|15 सेमी × 10 सेमी|14 सेमी × 9 सेमी
+भारतीय संविधान के अनुच्छेद 118 के अनुसार संसद के दोनों सदनों की संयुक्त बैठक की अध्यक्षता कौन करता है?|भारत के राष्ट्रपति|राज्यसभा के सभापति|लोकसभा अध्यक्ष|प्रधानमंत्री
+कोलन वर्गीकरण के छठे संस्करण में मुख्य वर्ग विधि को किस रोमन बड़े अक्षर से दर्शाया जाता है?|W|X|Y|Z
+एक स्वस्थ वयस्क मानव शरीर का सामान्य तापमान फारेनहाइट पैमाने पर कितना होता है?|96.4 डिग्री|98.6 डिग्री|100.2 डिग्री|97.5 डिग्री
+पुस्तकालयों में प्रयुक्त आरएफआईडी तकनीक में अनधिकृत पुस्तक निकासी रोकने वाली सुरक्षा बिट क्या कहलाती है?|ईएएस|बारकोड|यूआरएल|चिप
+वर्ष 1857 के प्रथम स्वतंत्रता संग्राम में जगदीशपुर में ब्रिटिश सेना के विरुद्ध विद्रोही सेना का नेतृत्व किसने किया था?|पीर अली खान|अमर सिंह|बाबू वीर कुंवर सिंह|निशान सिंह
+किसी पुस्तक के औपचारिक प्रकाशन से पूर्व उसके भीतर मानकीकृत कैटलॉग विवरण मुद्रित करने की व्यवस्था क्या कहलाती है?|सीसीसी|एसीआर|ओपेक|सीआईपी
+भारतीय मुख्य भूमि का सुदूर दक्षिणी छोर निम्नलिखित में से कौन-सा है?|इंदिरा पॉइंट|कन्याकुमारी|किबिथू|गुहार मोती
+मार्क 21 बिब्लियोग्राफिक फॉर्मेट में अंतर्राष्ट्रीय मानक पुस्तक संख्या दर्ज करने का टैग कौन-सा है?|टैग 020|टैग 022|टैग 041|टैग 082
+भारतीय संविधान का कौन-सा अनुच्छेद अस्पृश्यता के पूर्ण उन्मूलन से संबंधित है?|अनुच्छेद 14|अनुच्छेद 15|अनुच्छेद 17|अनुच्छेद 19
+कोलन वर्गीकरण के छठे संस्करण में मौलिक श्रेणी ऊर्जा को जोड़ने के लिए कौन-सा योजक चिह्न निर्धारित है?|अल्पविराम|अर्धविराम|बिंदु|कोलन
+बिहार के नवादा जिले में लगभग 160 फीट की ऊंचाई से गिरने वाला प्रसिद्ध प्राकृतिक जलप्रपात कौन-सा है?|गया जलप्रपात|ककोलत जलप्रपात|रोहतास जलप्रपात|कैमूर जलप्रपात
+पुस्तकालय में पुरानी, अनुपयोगी और अत्यधिक क्षतिग्रस्त पुस्तकों को संग्रह से स्थायी रूप से हटाना क्या कहलाता है?|वीडिंग आउट|शेल्फिंग|एक्सेशनिंग|बाइंडिंग
+पौधों पर संकरण प्रयोग कर आनुवंशिकी के बुनियादी नियमों की खोज किस वैज्ञानिक ने की थी?|चार्ल्स डार्विन|रॉबर्ट हुक|ग्रेगर जोहान मेंडल|लुई पाश्चर
+विश्व का पहला खुला स्रोत एकीकृत पुस्तकालय स्वचालन सॉफ्टवेयर कोहा मूल रूप से किस देश में बना था?|भारत|अमेरिका|ब्रिटेन|न्यूजीलैंड
+वर्ष 1928 में गुजरात में किसानों पर बढ़े लगान के विरोध में बारडोली सत्याग्रह का सफल नेतृत्व किसने किया था?|महात्मा गांधी|सरदार वल्लभभाई पटेल|विट्ठलभाई पटेल|महादेव देसाई
+डॉ. रंगनाथन द्वारा प्रतिपादित पुस्तकालय विज्ञान का प्रथम नियम निम्नलिखित में से कौन-सा है?|पुस्तकें उपयोग के लिए हैं|प्रत्येक पाठक को उसकी पुस्तक मिले|प्रत्येक पुस्तक को उसका पाठक मिले|पाठक का समय बचाएं
+भारतीय संसद के निचले सदन लोक सभा में बिहार राज्य को कुल कितनी सीटें आवंटित हैं?|16 सीटें|243 सीटें|40 सीटें|75 सीटें
+डिलीवरी ऑफ बुक्स एक्ट के तहत प्रकाशक को नई प्रकाशित पुस्तक कितने दिनों के भीतर राष्ट्रीय पुस्तकालयों को भेजनी होती है?|15 दिन|60 दिन|90 दिन|30 दिन
+भारत में मुद्रा और ऋण का नियमन करने वाला देश का केंद्रीय बैंक कौन-सा है?|भारतीय स्टेट बैंक|भारतीय रिजर्व बैंक|सेबी|नाबार्ड
+कोलन वर्गीकरण के छठे संस्करण में मुख्य वर्ग कृषि को किस रोमन बड़े अक्षर से दर्शाया जाता है?|J|I|K|L
+भारतीय संविधान के किस अनुच्छेद में राष्ट्रपति के अध्यादेश जारी करने की शक्ति का उल्लेख है?|अनुच्छेद 110|अनुच्छेद 112|अनुच्छेद 123|अनुच्छेद 143
+ग्रंथसूची रिकॉर्ड के एफआरबीआर मॉडल में किसी रचना की एकल भौतिक प्रति क्या कहलाती है?|वर्क|एक्सप्रेशन|मैनिफेस्टेशन|आइटम
+वायुमंडलीय दाब मापने वाले वैज्ञानिक उपकरण का क्या नाम है?|थर्मामीटर|बैरोमीटर|लैक्टोमीटर|हाइग्रोमीटर
+सार्वजनिक पुस्तकालयों के विकास हेतु गठित राजा राममोहन राय लाइब्रेरी फाउंडेशन का मुख्यालय किस शहर में है?|कोलकाता|नई दिल्ली|मुंबई|चेन्नई
+अप्रैल 1930 में पटना में नमक सत्याग्रह के दौरान नमक कानून किस स्थान पर तोड़ा गया था?|बांकीपुर|दीघा|नखास पिंड|गुलजारबाग
+वैज्ञानिक शोध साहित्य में लेखकों की प्रकाशन उत्पादकता से संबंधित प्रसिद्ध गणितीय नियम कौन-सा है?|ब्रैडफोर्ड का नियम|जिपफ का नियम|रंगनाथन का नियम|लोटका का नियम
+ईस्ट इंडिया कंपनी और संयुक्त भारतीय सेना के बीच बक्सर का निर्णायक युद्ध किस वर्ष लड़ा गया था?|1757|1764|1761|1765
+कोलन वर्गीकरण के छठे संस्करण में स्थान पक्ष को जोड़ने के लिए कौन-सा योजक चिह्न प्रयुक्त होता है?|बिंदु|अल्पविराम|अर्धविराम|कोलन
+भौतिक विज्ञान में विद्युत धारा मापने की मानक अंतर्राष्ट्रीय इकाई क्या है?|वोल्ट|वाट|एम्पीयर|ओम
+दुनिया भर के पुस्तकालयों के विशाल ग्रंथसूची रिकॉर्ड को समेकित करने वाली संघ सूची वर्ल्डकैट का संचालन कौन करता है?|यूनेस्को|लाइब्रेरी ऑफ कांग्रेस|ब्रिटिश लाइब्रेरी|ओसीएलसी
+बिहार राज्य का एकमात्र राष्ट्रीय उद्यान वाल्मीकि राष्ट्रीय उद्यान किस जिले में स्थित है?|गया|पश्चिम चंपारण|रोहतास|कैमूर
+मार्क 21 बिब्लियोग्राफिक फॉर्मेट में पुस्तक की आख्या और उत्तरदायित्व का विवरण किस टैग में आता है?|टैग 245|टैग 100|टैग 250|टैग 260
+भारतीय संविधान का कौन-सा अनुच्छेद नागरिकों को विधि के समक्ष समानता का अधिकार प्रदान करता है?|अनुच्छेद 19|अनुच्छेद 21|अनुच्छेद 14|अनुच्छेद 25
+यूजीन गारफील्ड द्वारा साइंस साइटेशन इंडेक्स की स्थापना किस वर्ष की गई थी?|1958|1971|1976|1964
+वर्ष 1905 में ऐतिहासिक बंगाल विभाजन की औपचारिक घोषणा किस ब्रिटिश वायसराय ने की थी?|लॉर्ड मिंटो|लॉर्ड कर्जन|लॉर्ड चेम्सफोर्ड|लॉर्ड हार्डिंग
+पुस्तक चयन के क्षेत्र में न्यूनतम लागत पर अधिकतम पाठकों के लिए सर्वोत्तम पठन का सिद्धांत किसने दिया?|मेलविल डेवी|सी. ए. कटर|एल. आर. मैकक्कॉल्विन|एफ. के. डब्ल्यू. ड्रूरी
+रासायनिक दृष्टि से सामान्यतः शुष्क बर्फ निम्नलिखित में से क्या होती है?|ठोस नाइट्रोजन|ठोस ऑक्सीजन|ठोस कार्बन डाइऑक्साइड|भारी जल
+डबलिन कोर मेटाडेटा प्रारूप में कुल कितने मूल कोर तत्व परिभाषित हैं?|10 तत्व|12 तत्व|18 तत्व|15 तत्व
+बिहार सरकार द्वारा आधिकारिक रूप से घोषित राज्य का राजकीय पशु कौन-सा है?|बाघ|बैल|हाथी|हिरण
+भारतीय कॉपीराइट अधिनियम, 1957 की कौन-सी धारा शोध और अध्ययन हेतु उचित व्यवहार से संबंधित है?|धारा 52|धारा 14|धारा 21|धारा 63
+भारतीय संविधान के किस अनुच्छेद के तहत देश में वित्तीय आपातकाल की घोषणा की जा सकती है?|अनुच्छेद 352|अनुच्छेद 356|अनुच्छेद 360|अनुच्छेद 368
+कोलन वर्गीकरण के छठे संस्करण में मौलिक श्रेणी पदार्थ को जोड़ने के लिए कौन-सा योजक चिह्न निर्धारित है?|कोलन|अल्पविराम|बिंदु|अर्धविराम
+प्रकाश संश्लेषण की जैविक प्रक्रिया में हरे पौधे उप-उत्पाद के रूप में कौन-सी गैस छोड़ते हैं?|नाइट्रोजन|ऑक्सीजन|कार्बन डाइऑक्साइड|हाइड्रोजन
+भारतीय विश्वविद्यालयों में स्वीकृत शोध-प्रबंधों के राष्ट्रीय डिजिटल भंडार शोधगंगा का प्रबंधन कौन करता है?|इन्फ्लिबनेट केंद्र|डेलनेट|राष्ट्रीय ज्ञान आयोग|निस्केयर
+बिहार के बेगूसराय जिले में स्थित एशिया की प्रसिद्ध मीठे पानी की गोखुर झील और राज्य का पहला रामसर स्थल कौन-सा है?|कटिहार झील|पूर्णिया झील|कांवर झील|खगड़िया झील`;
+const ANS="DBAC".repeat(15);
+const CAT="LHLPLSLBLH"+"LGLBLPLSLH"+"LGLPLBLSLH"+"LBLGLPLSLH"+"LHLSLBLPLH"+"LSLBLPLSLB";
+const CN={L:"पुस्तकालय विज्ञान",B:"बिहार सामान्य ज्ञान",H:"इतिहास",P:"भारतीय संविधान",S:"विज्ञान",G:"सामान्य ज्ञान"};
+const Q=D.trim().split("\n").map((l,i)=>{const p=l.split("|");return{q:p[0],o:p.slice(1,5),a:"ABCD".indexOf(ANS[i]),c:CAT[i]}});
+const N=Q.length, TOTAL=3600, NEG=0.25, LET=["क","ख","ग","घ"];
+const $=id=>document.getElementById(id);
+let cur=0,resp,mark,vis,tq,left,tid,name="",R=null;
+
+function go(v){["home","instr","test","result"].forEach(s=>$(s).classList.toggle("hide",s!==v));window.scrollTo(0,0);if(v==="home")hist()}
+function toggleTheme(){const r=document.documentElement,d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);r.dataset.theme=d?"light":"dark"}
+function getH(){try{return JSON.parse(localStorage.getItem("lvx_bl1")||"[]")}catch(e){return[]}}
+function setH(a){try{localStorage.setItem("lvx_bl1",JSON.stringify(a.slice(0,8)))}catch(e){}}
+function hist(){const h=getH();$("hist").innerHTML=h.length?`<table class="hist"><tr><th>दिनांक</th><th>नाम</th><th>स्कोर</th><th>सटीकता</th></tr>${h.map(x=>`<tr><td>${x.d}</td><td>${x.n}</td><td><b>${x.s}</b> / ${N}</td><td>${x.a}%</td></tr>`).join("")}</table>`:`<span style="color:var(--mut)">अभी कोई प्रयास नहीं – पहला टेस्ट दें!</span>`}
+function fmt(s){s=Math.max(0,s);return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function esc(t){return t.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+
+function startTest(){
+  name=esc($("nm").value.trim())||"परीक्षार्थी";
+  resp=Array(N).fill(null);mark=Array(N).fill(false);vis=Array(N).fill(false);tq=Array(N).fill(0);left=TOTAL;cur=0;
+  $("who").textContent="• "+name;go("test");render();
+  clearInterval(tid);tid=setInterval(()=>{left--;tq[cur]++;$("tm").textContent=fmt(left);$("tm").classList.toggle("low",left<=300);if(left<=0)finish()},1000);
+}
+function st(i){return resp[i]!==null?(mark[i]?4:2):(vis[i]?(mark[i]?3:1):0)}
+function render(){
+  vis[cur]=true;const q=Q[cur];
+  $("qno").textContent=`प्रश्न ${cur+1} / ${N}`;$("qst").textContent=CN[q.c];$("qtx").textContent=q.q;
+  $("ops").innerHTML=q.o.map((t,i)=>`<div class="op${resp[cur]===i?" sel":""}" onclick="pick(${i})"><i>${"ABCD"[i]}</i><span>${esc(t)}</span></div>`).join("");
+  pal();
+}
+function pal(){
+  $("pal").innerHTML=Q.map((_,i)=>`<button class="s${st(i)}${i===cur?" cur":""}" onclick="jump(${i})">${i+1}</button>`).join("");
+  const c=[0,0,0,0,0];for(let i=0;i<N;i++)c[st(i)]++;
+  $("cnt").innerHTML=`उत्तर दिए: <b>${c[2]+c[4]}</b> • चिह्नित: <b>${c[3]+c[4]}</b> • उत्तर नहीं: <b>${c[1]+c[3]}</b> • अनदेखे: <b>${c[0]}</b>`;
+}
+function pick(i){resp[cur]=i;render()}
+function clr(){resp[cur]=null;render()}
+function jump(i){cur=i;render()}
+function nav(d){cur=Math.min(N-1,Math.max(0,cur+d));render()}
+function markNext(){mark[cur]=!mark[cur];if(cur<N-1)cur++;render()}
+function askSubmit(){let a=resp.filter(x=>x!==null).length,m=mark.filter(Boolean).length;
+  $("msum").innerHTML=`कुल प्रश्न: <b>${N}</b><br>उत्तर दिए: <b>${a}</b><br>छोड़े गए: <b>${N-a}</b><br>रिव्यू हेतु चिह्नित: <b>${m}</b><br>शेष समय: <b>${fmt(left)}</b>`;
+  $("modal").classList.remove("hide")}
+function closeM(){$("modal").classList.add("hide")}
+
+function finish(){
+  clearInterval(tid);closeM();
+  let c=0,w=0,s=0;const cat={};Object.keys(CN).forEach(k=>cat[k]={t:0,a:0,c:0,w:0,time:0});
+  Q.forEach((q,i)=>{const k=cat[q.c];k.t++;k.time+=tq[i];if(resp[i]===null)s++;else{k.a++;if(resp[i]===q.a){c++;k.c++}else{w++;k.w++}}});
+  const score=Math.round((c-w*NEG)*100)/100,att=c+w,acc=att?Math.round(c/att*100):0,pct=Math.round(score/N*1000)/10;
+  const used=TOTAL-Math.max(0,left);
+  R={c,w,s,score,att,acc,pct,used,cat};
+  const h=getH();h.unshift({d:new Date().toLocaleDateString("hi-IN"),n:name,s:score,a:acc});setH(h);
+  showResult();
+}
+function donut(c,w,s){
+  const r=54,L=2*Math.PI*r,seg=[[c,"var(--ok)"],[w,"var(--bad)"],[s,"var(--mut)"]];let off=0;
+  return `<svg viewBox="0 0 140 140" width="150" height="150" role="img" aria-label="सही गलत छोड़े गए"><g transform="rotate(-90 70 70)" fill="none" stroke-width="18">${seg.map(([v,col])=>{const d=v/N*L,x=`<circle cx="70" cy="70" r="${r}" stroke="${col}" stroke-dasharray="${d} ${L-d}" stroke-dashoffset="${-off}"/>`;off+=d;return x}).join("")}</g><text x="70" y="76" text-anchor="middle" font-size="22" font-weight="700" fill="currentColor">${R.acc}%</text></svg>`;
+}
+function showResult(){
+  go("result");
+  const lvl=R.pct>=80?"🏆 उत्कृष्ट":R.pct>=60?"👍 अच्छा":R.pct>=40?"📈 औसत":"💪 और अभ्यास की ज़रूरत";
+  const rows=Object.keys(CN).map(k=>({k,...R.cat[k]})).filter(x=>x.t).map(x=>({...x,acc:x.a?Math.round(x.c/x.a*100):0,cov:Math.round(x.c/x.t*100)}));
+  const ranked=rows.filter(x=>x.a).sort((a,b)=>b.acc-a.acc);
+  const strong=ranked.slice(0,2).map(x=>CN[x.k]),weak=rows.slice().sort((a,b)=>a.cov-b.cov).slice(0,2).map(x=>CN[x.k]);
+  let sl=0;tq.forEach((t,i)=>{if(t>tq[sl])sl=i});
+  const top=tq.map((t,i)=>[t,i]).sort((a,b)=>b[0]-a[0]).slice(0,3);
+  const avg=R.att?Math.round(R.used/R.att):0;
+  $("result").innerHTML=`
+  <div class="card"><div class="sc">
+    ${donut(R.c,R.w,R.s)}
+    <div style="flex:1;min-width:220px">
+      <div style="color:var(--mut)">${name} – बिहार लाइब्रेरियन पेपर 01</div>
+      <div class="big">${R.score} <span style="font-size:1.1rem;color:var(--mut)">/ ${N}</span></div>
+      <span class="tag">${lvl}</span> <span style="color:var(--mut)">&nbsp;${R.pct}% अंक</span>
+    </div></div></div>
+  <div class="grid">
+    <div class="card stat"><b style="color:var(--ok)">${R.c}</b><span>सही (+${R.c})</span></div>
+    <div class="card stat"><b style="color:var(--bad)">${R.w}</b><span>गलत (−${Math.round(R.w*NEG*100)/100})</span></div>
+    <div class="card stat"><b style="color:var(--mut)">${R.s}</b><span>छोड़े गए</span></div>
+    <div class="card stat"><b>${R.att}</b><span>प्रयास किए</span></div>
+    <div class="card stat"><b>${R.acc}%</b><span>सटीकता</span></div>
+    <div class="card stat"><b>${fmt(R.used)}</b><span>लिया गया समय</span></div>
+  </div>
+  <h2>📊 विषय-वार विश्लेषण</h2>
+  <div class="card scroll"><table class="tbl"><tr><th>विषय</th><th>कुल</th><th>सही</th><th>गलत</th><th>छोड़े</th><th>सटीकता</th><th style="min-width:110px">प्रदर्शन</th></tr>
+  ${rows.map(x=>`<tr><td><b>${CN[x.k]}</b></td><td>${x.t}</td><td style="color:var(--ok)">${x.c}</td><td style="color:var(--bad)">${x.w}</td><td>${x.t-x.a}</td><td>${x.acc}%</td><td><div class="bar"><b style="width:${x.cov}%"></b></div></td></tr>`).join("")}</table></div>
+  <h2>💡 आपके लिए सुझाव</h2>
+  <div class="card"><ul class="l">
+    ${strong.length?`<li><b>मज़बूत क्षेत्र:</b> ${strong.join(", ")} – इनमें अपनी पकड़ बनाए रखें।</li>`:""}
+    <li><b>सुधार हेतु क्षेत्र:</b> ${weak.join(", ")} – इन विषयों को पहले दोहराएँ।</li>
+    ${R.w>R.c?`<li>गलत उत्तर अधिक हैं; अनुमान लगाने से बचें, क्योंकि प्रत्येक गलत उत्तर पर ${NEG} अंक कटता है।</li>`:""}
+    ${R.s>N*0.25?`<li>${R.s} प्रश्न छूट गए – जिन प्रश्नों के दो विकल्प हटा सकें, उन्हें अवश्य करें।</li>`:""}
+    <li>पुस्तकालय विज्ञान के प्रश्न इस पेपर में सबसे अधिक हैं (${R.cat.L.t} में से ${R.cat.L.c} सही) – इसे प्राथमिकता दें।</li>
+  </ul></div>
+  <h2>⏱️ समय विश्लेषण</h2>
+  <div class="card"><ul class="l">
+    <li>कुल समय: <b>${fmt(R.used)}</b> / ${fmt(TOTAL)} • प्रति प्रयास किए गए प्रश्न औसत: <b>${avg} सेकंड</b></li>
+    <li>सबसे अधिक समय लगे प्रश्न: ${top.filter(x=>x[0]>0).map(x=>`प्र.${x[1]+1} (${x[0]} से.)`).join(", ")||"—"}</li>
+  </ul></div>
+  <h2>📝 प्रश्न-वार समीक्षा</h2>
+  <div class="fl noprint" id="flt">${[["all","सभी"],["c","सही"],["w","गलत"],["s","छोड़े गए"]].map(([k,t],i)=>`<button class="btn${i?"":" on"}" onclick="filt('${k}',this)">${t}</button>`).join("")}</div>
+  <div id="rv"></div>
+  <div class="acts noprint" style="margin-top:20px"><button class="btn p" onclick="startTest()">🔁 दोबारा टेस्ट दें</button><button class="btn" onclick="window.print()">🖨️ प्रिंट / PDF</button><button class="btn" onclick="go('home')">होम पर जाएँ</button></div>`;
+  filt("all");
+}
+function filt(f,b){
+  if(b){document.querySelectorAll("#flt .btn").forEach(x=>x.classList.remove("on"));b.classList.add("on")}
+  $("rv").innerHTML=Q.map((q,i)=>{
+    const r=resp[i],stt=r===null?"s":r===q.a?"c":"w";if(f!=="all"&&f!==stt)return"";
+    const bd=stt==="c"?'<span class="b ok">सही</span>':stt==="w"?'<span class="b bd">गलत</span>':'<span class="b sk">छोड़ा</span>';
+    return `<div class="rv"><div class="qn"><span><b>प्रश्न ${i+1}</b> • ${CN[q.c]}</span><span>${bd} • ${tq[i]} से.</span></div><div class="qt" style="font-size:1.05rem">${esc(q.q)}</div>
+    ${q.o.map((t,j)=>`<div class="op${j===q.a?" ok":j===r?" bd":""}"><i>${"ABCD"[j]}</i><span>${esc(t)}${j===q.a?" ✔ (सही उत्तर)":j===r?" ✘ (आपका उत्तर)":""}</span></div>`).join("")}</div>`}).join("")||'<div class="card" style="color:var(--mut)">इस श्रेणी में कोई प्रश्न नहीं।</div>';
+}
+hist();
+</script>
+</body>
+</html>
